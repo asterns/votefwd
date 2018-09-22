@@ -23,7 +23,12 @@ BEGIN
   FROM catalist_raw
   WHERE state='NC'
   AND registration_address_line_1 = mail_address_line_1
-  AND congressional_district='9';
+  AND congressional_district='9'
+  AND dwid NOT IN (
+    '168325095',
+    '169664255',
+    '43116982'
+  );
 
   -- COUNT HOW MANY NEWLY ELIGIBLE VOTERS WE ADDED --
 
@@ -90,7 +95,12 @@ BEGIN
   ON experiment_voter.voter_id = catalist_raw.dwid
   WHERE experiment_voter.cohort = 'TEST'
   AND state='NC'
-  AND congressional_district='9';
+  AND congressional_district='9'
+  AND dwid NOT IN (
+    '168325095',
+    '169664255',
+    '43116982'
+  );
 
   RAISE NOTICE 'Populated voters table with new TEST voters.';
 

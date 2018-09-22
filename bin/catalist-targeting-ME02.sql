@@ -26,9 +26,16 @@ BEGIN
   AND congressional_district='2'
   -- EXCLUDE DUPlICATE RECORDS 
   AND dwid NOT IN (
- '990266692'
+    '990266692',
+    '122904957',
+    '42943451',
+    '122994726',
+    '123079125',
+    '159944446',
+    '1008498977',
+    '344071378',
+    '42588724'
 );
-
 
   -- COUNT HOW MANY NEWLY ELIGIBLE VOTERS WE ADDED --
 
@@ -97,7 +104,15 @@ BEGIN
   AND state='ME'
   AND congressional_district='2'
   AND dwid NOT IN (
- '990266692'
+    '990266692',
+    '122904957',
+    '42943451',
+    '122994726',
+    '123079125',
+    '159944446',
+    '1008498977',
+    '344071378',
+    '42588724'
 );
 
   RAISE NOTICE 'Populated voters table with new TEST voters.';
